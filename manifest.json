@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Form AutoFiller",
+  "version": "1.0",
+  "description": "Automatically fill forms with pre-saved data sets.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
